@@ -30,8 +30,9 @@ app.get('/traduciraingles', function(req, res){
     password: password,
     version: 'v2'
   });
+  console.log("texto: " + req.query.texto)
   traduccioningles.translate({
-    text: req.texto,
+    text: req.query.texto,
     source: 'es',
     target: 'en',
     model: 'es-en'
