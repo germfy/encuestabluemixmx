@@ -74,6 +74,41 @@ app.get('/analisissentimiento', function(req, res){
   });
 });
 
+app.get('/analisisLU', function(req, res){
+  var appEnv = cfenv.getAppEnv();
+	var appService = appEnv.getService("Natural Language Understanding-rg");
+
+	var url = appService.credentials.url;
+	var username = appService.credentials.username;
+	var password = appService.credentials.password;
+
+  var analisisLU = watson.NaturalLanguageUnderstandingV1({
+    username: username,
+    password: password,
+    version_date: '2017-02-27'
+  });
+
+  resultado = analisisentidades.analize({
+    text: req.query.texto,
+    features: {
+      entities : {
+        sentiment : true
+      },
+      concepts : {},
+      keywords : {
+        sentiment : true,
+        emotion : true
+      }
+    }
+  }, function(err, response){
+    if(err){
+      console.log(err);
+    }else{
+      res.json(response);
+    };
+  });
+});
+
 app.get('/voz', function(req, res, next){
 	var appEnv = cfenv.getAppEnv();
 	var appService = appEnv.getService("Texto a voz-ut");
