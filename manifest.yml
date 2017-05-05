@@ -1,0 +1,13 @@
+applications:
+- path: .
+  memory: 512M
+  instances: 2
+  domain: mybluemix.net
+  name: encuestabluemixmx
+  host: encuestabluemixmx
+  disk_quota: 1024M
+  services:
+  - Cloudant NoSQL DB-vw
+  - Language Translator-4v
+  - Tone Analyzer-c1
+  - Natural Language Understanding-rg
