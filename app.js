@@ -19,7 +19,7 @@ var appEnv = cfenv.getAppEnv();
 
 app.get('/traduciraingles', function(req, res){
   var appEnv = cfenv.getAppEnv();
-	var appService = appEnv.service("Language Translator-4v");
+	var appService = appEnv.getService("Language Translator-4v");
 
 	var url = appService.credentials.url;
 	var username = appService.credentials.username;
@@ -43,7 +43,7 @@ app.get('/traduciraingles', function(req, res){
 
 app.get('/analisissentimiento', function(req, res){
   var appEnv = cfenv.getAppEnv();
-	var appService = appEnv.service("Tone Analyzer-c1");
+	var appService = appEnv.getService("Tone Analyzer-c1");
 
 	var url = appService.credentials.url;
 	var username = appService.credentials.username;
