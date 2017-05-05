@@ -30,14 +30,20 @@ app.get('/traduciraingles', function(req, res){
     password: password,
     version: 'v2'
   });
-  traducido = traduccioningles.translate({
+  traduccioningles.translate({
     text: req.texto,
     source: 'es',
     target: 'en',
     model: 'es-en'
+  }, function(err, translation){
+    if(err){
+      console.log(err);
+    } else {
+      console.log(translation);
+    }
   });
 
-  console.log(traducido);
+
 
 });
 
