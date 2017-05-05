@@ -88,7 +88,7 @@ app.get('/analisisLU', function(req, res){
     version_date: '2017-02-27'
   });
 
-  resultado = analisisentidades.analize({
+  resultado = analisisLU.analize({
     text: req.query.texto,
     features: {
       entities : {
