@@ -82,7 +82,7 @@ app.get('/analisisLU', function(req, res){
 	var username = appService.credentials.username;
 	var password = appService.credentials.password;
 
-  var analisisLU = watson.NaturalLanguageUnderstandingV1({
+  var analisisLU = new watson.NaturalLanguageUnderstandingV1({
     username: username,
     password: password,
     version_date: '2017-02-27'
