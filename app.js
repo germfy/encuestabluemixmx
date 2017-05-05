@@ -3,6 +3,7 @@ var express = require('express');
 var cfenv = require('cfenv');
 var url = require('url');
 var watson = require('watson-developer-cloud');
+var NaturalLanguageUnderstandigV1 = require('watson-developer-cloud/natural-language-understanding/v1.js')
 var Cloudant = require('cloudant');
 
 
@@ -82,7 +83,7 @@ app.get('/analisisLU', function(req, res){
 	var username = appService.credentials.username;
 	var password = appService.credentials.password;
 
-  var analisisLU = new watson.NaturalLanguageUnderstandingV1({
+  var analisisLU = new NaturalLanguageUnderstandigV1({
     username: username,
     password: password,
     version_date: '2017-02-27'
