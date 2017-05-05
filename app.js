@@ -19,11 +19,11 @@ var appEnv = cfenv.getAppEnv();
 
 app.get('/traduciraingles', function(req, res){
   var appEnv = cfenv.getAppEnv();
-	var appService = appEnv.services("language_translator");
+	var appService = appEnv.service("Language Translator-4v");
 
-	var url = appService[0].credentials.url;
-	var username = appService[0].credentials.username;
-	var password = appService[0].credentials.password;
+	var url = appService.credentials.url;
+	var username = appService.credentials.username;
+	var password = appService.credentials.password;
 
   var traduccioningles = watson.language_translator({
     username: username,
@@ -43,11 +43,11 @@ app.get('/traduciraingles', function(req, res){
 
 app.get('/analisissentimiento', function(req, res){
   var appEnv = cfenv.getAppEnv();
-	var appService = appEnv.services("tone_analyzer");
+	var appService = appEnv.services("Tone Analyzer-c1");
 
-	var url = appService[0].credentials.url;
-	var username = appService[0].credentials.username;
-	var password = appService[0].credentials.password;
+	var url = appService.credentials.url;
+	var username = appService.credentials.username;
+	var password = appService.credentials.password;
 
   var analisistono = watson.tone_analyzer({
     username: username,
