@@ -40,7 +40,7 @@ app.get('/traduciraingles', function(req, res){
     if(err){
       console.log(err);
     } else {
-      console.log(translation);
+      res.send(translation);
     }
   });
 
@@ -60,13 +60,18 @@ app.get('/analisissentimiento', function(req, res){
     username: username,
     password: password,
     version: 'v3',
-    version_date: '2016-05-19'
+    version_date: '2016-05-19 '
   });
 
   resultado = analisistono.tone({
-    text: req.texto
+    text: req.query.texto
+  }, function(err, tone){
+    if(err){
+      console.log(err);
+    }else{
+      res.json(tone);
+    };
   });
-  console.log(resultado);
 });
 
 app.get('/voz', function(req, res, next){
