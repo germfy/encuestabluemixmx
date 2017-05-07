@@ -89,7 +89,7 @@ app.get('/analisisLU', function(req, res){
     version_date: '2017-02-27'
   });
 
-  var parameters = {
+  var parametros = {
     text: req.query.texto,
     features: {
       entities : {
@@ -103,7 +103,7 @@ app.get('/analisisLU', function(req, res){
     }
   };
 
-  resultado = analisisLU.analize(paramters, function(err, response){
+  resultado = analisisLU.analize(parametros, function(err, response){
     if(err){
       console.log(err);
     }else{
