@@ -103,7 +103,7 @@ app.get('/analisisLU', function(req, res){
     }
   };
 
-  resultado = analisisLU.analize(parametros, function(err, response){
+  resultado = analisisLU.analyze(parametros, function(err, response){
     if(err){
       console.log(err);
     }else{
