@@ -100,7 +100,9 @@ app.get('/analisisLU', function(req, res){
         sentiment : true,
         emotion : true
       }
-    }
+    },
+    language: es,
+    return_analyzed_text: true
   };
 
   resultado = analisisLU.analyze(parametros, function(err, response){
