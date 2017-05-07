@@ -101,7 +101,7 @@ app.get('/analisisLU', function(req, res){
         emotion : true
       }
     },
-    language: es,
+    language: 'es',
     return_analyzed_text: true
   };
 
