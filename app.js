@@ -109,6 +109,7 @@ app.get('/analisisLU', function(req, res){
     if(err){
       console.log(err);
     }else{
+      console.log(response);
       res.send(JSON.stringify(response));
     };
   });
